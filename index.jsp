@@ -22,15 +22,13 @@
   </body>
 </html>
 
-<% // Set up the database connection String url =
-"jdbc:mysql://localhost:3306/mydatabase"; String user = "username"; String
-password = "password"; Connection conn = DriverManager.getConnection(url, user,
-password); // Get the total number of students Statement stmt =
+<%  String url =
+"jdbc:mysql://localhost:3306/mydatabase"; String user = "pradeep"; String
+password = "pradeep"; Connection conn = DriverManager.getConnection(url, user,
+password);  Statement stmt =
 conn.createStatement(); ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS
-total FROM students"); rs.next(); int totalStudents = rs.getInt("total"); // Get
-the average age of all students rs = stmt.executeQuery("SELECT AVG(age) AS
-average FROM students"); rs.next(); double avgAge = rs.getDouble("average"); //
-Get the department with the highest number of students rs =
+total FROM students"); rs.next(); int totalStudents = rs.getInt("total");  rs = stmt.executeQuery("SELECT AVG(age) AS
+average FROM students"); rs.next(); double avgAge = rs.getDouble("average"); s rs =
 stmt.executeQuery("SELECT department, COUNT(*) AS count FROM students GROUP BY
 department ORDER BY count DESC LIMIT 1"); rs.next(); String department =
-rs.getString("department"); // Close the database connection conn.close(); %>
+rs.getString("department");  %>
